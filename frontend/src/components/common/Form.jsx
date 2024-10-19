@@ -17,6 +17,7 @@ const Form = ({
   setFormData,
   onSubmit,
   buttonText,
+  isBtnDisabled,
 }) => {
   function inputsByComponentsType(getControlItem) {
     let elem = null;
@@ -113,7 +114,7 @@ const Form = ({
           </div>
         ))}
       </div>
-      <Button type="submit" className="mt-2 w-full">
+      <Button disabled={isBtnDisabled} type="submit" className="mt-2 w-full">
         {buttonText || "Submit"}
       </Button>
     </form>
