@@ -1,5 +1,6 @@
 import React from "react";
 import ShoppingHeder from "./ShoppingHeder";
+import { Outlet } from "react-router-dom";
 
 const ShoppingLayout = () => {
   return (
