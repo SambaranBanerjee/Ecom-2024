@@ -143,6 +143,7 @@ function Listing() {
           {productList && productList.length > 0
             ? productList.map((productItem) => (
                 <ShoppingProductTile
+                  key={productItem.id}
                   handleGetProductDetails={handleGetProductDetails}
                   product={productItem}
                   // handleAddtoCart={handleAddtoCart}
