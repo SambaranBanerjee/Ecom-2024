@@ -37,6 +37,6 @@ app.use(express.json());
 app.use("/api/auth", authRouter);
 
 app.use("/api/admin/products", adminProductsRouter);
-app.use("/api/shop/listings", adminProductsRouter);
+app.use("/api/shop/listings", shopProductsRouter);
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));

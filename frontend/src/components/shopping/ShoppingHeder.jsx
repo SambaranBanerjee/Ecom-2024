@@ -19,9 +19,9 @@ import {
 } from "../ui/dropdown-menu";
 import { Avatar, AvatarFallback } from "../ui/avatar";
 // import { logoutUser } from "";
-import UserCartWrapper from "./CartWrapper";
+// import UserCartWrapper from "./CartWrapper";
 import { useEffect, useState } from "react";
-import { fetchCartItems } from "../../store/shop/cart-slice/index";
+// import { fetchCartItems } from "../../store/shop/cart-slice/index";
 import { Label } from "../ui/label";
 
 function MenuItems() {
@@ -75,9 +75,9 @@ function HeaderRightContent() {
     dispatch(logoutUser());
   }
 
-  useEffect(() => {
-    dispatch(fetchCartItems(user?.id));
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchCartItems(user?.id));
+  // }, [dispatch]);
 
   // console.log(cartItems, "sangam");
 
