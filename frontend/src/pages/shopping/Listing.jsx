@@ -1,4 +1,5 @@
 import ProductFilter from "@/components/shopping/Filter";
+import ProductDetailsDialog from "@/components/shopping/ProductDetails";
 import ShoppingProductTile from "@/components/shopping/ShoppingProductTile";
 import { Button } from "@/components/ui/button";
 import {
@@ -44,6 +45,7 @@ function Listing() {
   const [filters, setFilters] = useState({});
   const [sort, setSort] = useState(null);
   const [searchParams, setSearchParams] = useSearchParams();
+  const [openDetailsDialog, setOpenDetailsDialog] = useState(false);
 
   function handleSort(value) {
     console.log(value);
@@ -80,6 +82,10 @@ function Listing() {
     console.log(getCurrentProductId);
     dispatch(fetchProductDetails(getCurrentProductId));
   }
+
+  useEffect(() => {
+    if (productDetails !== null) setOpenDetailsDialog(true);
+  }, [productDetails]);
 
   useEffect(() => {
     setSort("price-lowtohigh");
@@ -152,11 +158,11 @@ function Listing() {
             : null}
         </div>
       </div>
-      {/* <ProductDetailsDialog
+      <ProductDetailsDialog
         open={openDetailsDialog}
         setOpen={setOpenDetailsDialog}
         productDetails={productDetails}
-      /> */}
+      />
     </div>
   );
 }

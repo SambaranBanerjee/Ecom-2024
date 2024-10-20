@@ -42,8 +42,8 @@ const shoppingProductSlice = createSlice({
   name: "shoppingProducts",
   initialState,
   reducers: {
-    setProductDetails: (state) => {
-      state.productDetails = null;
+    setProductDetails: (state, action) => {
+      state.productDetails = action.payload;
     },
   },
   extraReducers: (builder) => {
